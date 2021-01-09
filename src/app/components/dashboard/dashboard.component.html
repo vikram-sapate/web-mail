@@ -1,7 +1,15 @@
 <div class="container">
   <div class="item-header"></div>
   <div class="item-main">
-    <div class="menu"></div>
+    <div class="menu" style="display: flex; flex-direction: column">
+      <div style="margin: 10%; height: 10%">
+        <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+        <button  mat-button (click)="onComposeMail()" style="width: 100%; height: 50px; border-radius: 5px">Compose Mail</button>
+      </div>
+      <div style="height: 30%;background-color: currentColor;"></div>
+      <div style="height: 30%;background-color: darkgreen;"></div>
+      <div style="height: 30%;background-color: darkred;"></div>
+    </div>
     <div class="mails">
       <div style="height: 10%; background-color: darkmagenta"></div>
       <div style="height: 10%; background-color: darkviolet"></div>
