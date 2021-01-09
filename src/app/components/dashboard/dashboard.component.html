@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="item-header"></div>
+  <div class="item-main">
+    <div class="menu"></div>
+    <div class="mails">
+      <div style="height: 10%; background-color: darkmagenta"></div>
+      <div style="height: 10%; background-color: darkviolet"></div>
+      <ul
+        style="
+          height: 80%;
+          background-color: darksalmon;
+          list-style-type: none;
+          padding: 10px;
+        "
+      >
+        <li
+          *ngFor="let mail of mails"
+          style="
+            display: flex;
+            justify-content: space-around;
+            height: 8%;
+            font-size: medium;
+            text-align: center;
+            align-items: center; ;
+          "
+        >
+          <div class="checkbox" style="width: 5%">
+            <input
+              style="size: 20px; transform: scale(2)"
+              type="checkbox"
+              id="vehicle1"
+              name="vehicle1"
+              value="Bike"
+            />
+          </div>
+          <div class="name" style="width: 15%">
+            {{ mail.name }}
+          </div>
+          <div class="sub" style="width: 65%">
+            {{ mail.sub }}
+          </div>
+          <div class="date" style="width: 15%">
+            {{ mail.time }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="item-sidebar"></div>
+</div>
+
+<!-- <table>
+          <tr>
+            <th id="mail-name">Name</th>
+            <th id="mail-sub">Subject</th>
+            <th id="mail-time">Date</th>
+          </tr>
+          <tr>
+              <td *ngFor="let mail of mails" style="display: flex;justify-content: space-between;">
+                <div class="checkbox">
+                 
+                </div>
+                <div class="name">
+                    {{mail.name}}
+                </div>
+                <div class="sub">
+                    {{mail.sub}}
+                </div>
+                <div class="date">
+                    {{mail.time}}
+                </div>
+              </td>
+          </tr>
+        </table> -->
+<!-- </div> -->

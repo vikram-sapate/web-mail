@@ -1,0 +1,76 @@
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Email"
+            formControlName="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-button>Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- <div class="phone-number-container">sssssssss
+    <form #f="ngForm" (ngSubmit)="onContionue(f)">
+      <div class="form-group">
+        <input
+          ngModel
+          name="email"
+          type="text"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          class="form-control"
+          style="width: 100%; outline: none"
+          placeholder="Enter your Email address"
+          required
+          #email="ngModel"
+          autocomplete="off"
+        />
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.pattern">Invalid email address</div>
+        </div>
+      </div>
+
+        <div class="page-loader loader" style="display: none"></div>
+        <p class="info"></p>
+      
+      <div style="margin: 30px 0">
+        <button
+          class=""
+          style="width: 100%; height: 50px"
+          type="button"
+          class="btn btn-primary btn-continue"
+          (click)="onContionue(f)"
+          [disabled]="!f.valid"
+        >
+          Continue
+        </button>
+      </div>
+    </form>
+</div> -->
