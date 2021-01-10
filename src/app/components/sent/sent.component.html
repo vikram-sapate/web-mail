@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Sent mails</h2>
+<mat-dialog-content class="mat-typography">
+    <ul
+    style="
+      height: 80%;
+      list-style-type: none;
+      padding: 0;
+      background-color: #f3f3f4;
+    "
+  >
+    <li
+      *ngFor="let mail of sentMails"
+      style="
+        display: flex;
+        justify-content: space-around;
+        height: 50px;
+        font-size: medium;
+        text-align: center;
+        align-items: center;
+        background-color: white;
+        margin: 2px 0 2px;
+        cursor: pointer;
+      "
+    >
+      <div class="name" style="width: 15%">
+        To: {{ mail.to }}
+      </div>
+      <div class="sub" style="width: 65%">
+        {{ mail.sub }}
+      </div>
+      <div class="date" style="width: 15%">
+        {{ mail.time }}
+      </div>
+    </li>
+  </ul>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

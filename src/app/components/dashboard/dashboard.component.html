@@ -47,11 +47,11 @@
             </span>
             <div>Inbox</div>
           </li>
-          <li class="menu-list">
-            <span class="material-icons" style="padding-right: 10px">
+          <li class="menu-list" (click)="onSentMail()">
+            <span class="material-icons" style="padding-right: 10px" >
               mail_outline
             </span>
-            <div>Send Mail</div>
+            <div>Sent Mail</div>
           </li>
           <li class="menu-list">
             <span class="material-icons" style="padding-right: 10px">
@@ -86,7 +86,7 @@
             <span class="material-icons" style="padding-right: 10px">
               mail_outline
             </span>
-            <div>Send Mail</div>
+            <div>Sent Mail</div>
           </li>
           <li class="menu-list">
             <span class="material-icons" style="padding-right: 10px">
@@ -105,11 +105,11 @@
             </span>
             <div>Inbox</div>
           </li>
-          <li class="menu-list">
+          <li class="menu-list" >
             <span class="material-icons" style="padding-right: 10px">
               mail_outline
             </span>
-            <div>Send Mail</div>
+            <div>Sent Mail</div>
           </li>
           <li class="menu-list">
             <span class="material-icons" style="padding-right: 10px">
@@ -130,7 +130,7 @@
           padding: 10px;
         "
       >
-        <p style="font-size: x-large">Inbox {{ unreadMsgs }}</p>
+        <p style="font-size: x-large">Inbox ( {{ unReadMails }} )</p>
         <div style="padding-left: 50%">
           <input
             type="text"
@@ -141,12 +141,12 @@
       </div>
       <div
         style="
-          width: 100%;
           display: flex;
           align-content: space-between;
           text-align: center;
           align-items: center;
           padding: 10px;
+          cursor: pointer;
         "
       >
         <div
@@ -166,10 +166,7 @@
         <div style="padding: 5px">
           <span class="material-icons"> priority_high </span>
         </div>
-        <div style="padding: 5px">
-          <span class="material-icons"> delete_outline </span>
-        </div>
-        <div style="padding: 5px; margin-left: 40%;">
+        <div style="padding: 5px; margin-left: 70%">
           <span class="material-icons">arrow_back </span>
         </div>
         <div style="padding: 5px">
@@ -195,16 +192,12 @@
             align-items: center;
             background-color: white;
             margin: 2px 0 2px;
+            cursor: pointer;
           "
+          (click) = "openMail(mail)"
         >
-          <div class="checkbox" style="width: 5%">
-            <input
-              style="size: 20px; transform: scale(2)"
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            />
+          <div style="padding: 5px; z-index: 1;" (click)="deleteMail(mail)">
+            <span class="material-icons"> delete_outline </span>
           </div>
           <div class="name" style="width: 15%">
             {{ mail.senderName }}

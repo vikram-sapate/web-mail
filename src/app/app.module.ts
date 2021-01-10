@@ -9,13 +9,17 @@ import { MaterialModule } from './modules/material/material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComposeComponent } from './components/compose/compose.component';
+import { ReadComponent } from './components/read/read.component';
+import { SentComponent } from './components/sent/sent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ComposeComponent
+    ComposeComponent,
+    ReadComponent,
+    SentComponent
   ],
   imports: [
     FormsModule,

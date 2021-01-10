@@ -7,6 +7,7 @@ export const mails = [
     sub: 'sub1',
     time: 'time1',
     mail: 'mail1',
+    isRead: false
   },  
   {
     senderName: 'a',
@@ -14,8 +15,9 @@ export const mails = [
     to: 'b@g.com',
     cc: 'c@g.com',
     sub: 'sub2',
-    time: 'time2',
+    time: 'time3',
     mail: 'mail2',
+    isRead: false
   },
   {
     senderName: 'b',
@@ -23,8 +25,9 @@ export const mails = [
     to: 'a@g.com',
     cc: 'c@g.com',
     sub: 'sub1',
-    time: 'time1',
+    time: 'time4',
     mail: 'mail1',
+    isRead: false
   },
   {
     senderName: 'b',
@@ -32,8 +35,9 @@ export const mails = [
     to: 'a@g.com',
     cc: 'c@g.com',
     sub: 'sub2',
-    time: 'time2',
+    time: 'time5',
     mail: 'mail2',
+    isRead: false
   },
   {
     senderName: 'c',
@@ -41,8 +45,9 @@ export const mails = [
     to: 'a@g.com',
     cc: 'b@g.com',
     sub: 'sub1',
-    time: 'time1',
+    time: 'time6',
     mail: 'mail1',
+    isRead: false
   },
   {
     senderName: 'c',
@@ -50,8 +55,9 @@ export const mails = [
     to: 'a@g.com',
     cc: 'b@g.com',
     sub: 'sub2',
-    time: 'time2',
+    time: 'time7',
     mail: 'mail2',
+    isRead: false
   },
 ];
 
