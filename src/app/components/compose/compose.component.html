@@ -6,29 +6,29 @@
         type="text"
         matInput
         placeholder="To"
-        formControlName="email"
+        [(ngModel)]="data.to"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
       />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
-      <input type="text" matInput placeholder="cc" formControlName="cc" />
+      <input type="text" matInput placeholder="cc" [(ngModel)]="data.cc" />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
-      <input type="text" matInput placeholder="Subject" formControlName="subject" />
+      <input type="text" matInput placeholder="Subject" [(ngModel)]="data.sub" />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="fill">
       <mat-label></mat-label>
-      <textarea matInput style="height: 200px;"></textarea>
+      <textarea matInput style="height: 200px;" [(ngModel)]="data.mail"></textarea>
     </mat-form-field>
   </p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Send</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Send</button>
 </mat-dialog-actions>

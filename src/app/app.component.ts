@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { mails } from './constants/constants';
+import { accounts, mails } from './constants/constants';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,6 @@ export class AppComponent implements OnInit {
   title = 'WebMail';
   ngOnInit() {
     localStorage.setItem('mails', JSON.stringify(mails));
-    localStorage.setItem('email', 'a@b.com');
-    localStorage.setItem('password', '123');
+    localStorage.setItem('accounts', JSON.stringify(accounts));
   }
 }

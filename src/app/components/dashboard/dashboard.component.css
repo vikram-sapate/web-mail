@@ -10,7 +10,7 @@
 }
 .item-sidebar {
   grid-area: sidebar;
-  background-color: blueviolet;
+  background-color: #263a4a;
 }
 
 .container {
@@ -27,7 +27,7 @@
 
 .menu {
   width: 25%;
-  background-color: burlywood;
+  background-color: #f3f3f4;
 }
 .mails {
   width: 80%;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-compose',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./compose.component.css']
 })
 export class ComposeComponent implements OnInit {
-
+  data: {
+    to?: string;
+    cc?: string;
+    sub?: string;
+    mail?: string;
+  } = {};
   constructor() { }
-
+  
   ngOnInit(): void {
   }
+
+
 
 }

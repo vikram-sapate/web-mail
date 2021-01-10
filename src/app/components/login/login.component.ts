@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { DataService } from 'src/app/services/data.service';
+import { Account } from '../../interfaces/account';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   error: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit(): void {}
 
@@ -22,12 +23,12 @@ export class LoginComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.error = null;
-      const email = localStorage.getItem('email');
-      const password = localStorage.getItem('password');
-      if (
-        email == this.form.value.email &&
-        password == this.form.value.password
-      ) {
+      const accounts: Account[] = JSON.parse(localStorage.getItem('accounts')!);
+      const account: any = accounts.find((acc) => {
+        return this.form.value.email == acc.email;
+      });
+      this.dataService.userEmail = account.email;
+      if (account.password == this.form.value.password) {
         this.router.navigate(['mails']);
       } else {
         this.error = 'Username or password invalid';
