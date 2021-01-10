@@ -1,23 +1,187 @@
-<div class="container">
-  <div class="item-header"></div>
+<div
+  class="container"
+  [ngStyle]="{
+    'grid-template-columns': isMenuExpanded
+      ? '15% repeat(3, 1fr)'
+      : '4% repeat(3, 1fr)'
+  }"
+>
+  <div class="item-header">
+    <span
+      class="material-icons list"
+      style="
+        color: #00b494;
+        font-size: xx-large;
+        padding: 0 20px 0 20px;
+        cursor: pointer;
+      "
+      (click)="onMenuToggle()"
+    >
+    </span>
+    <div style="color: #999999">Search something...</div>
+  </div>
+
   <div class="item-main">
     <div class="menu" style="display: flex; flex-direction: column">
       <div style="margin: 10%; height: 10%">
-        <button  mat-button (click)="onComposeMail()" style="width: 100%; height: 50px; border-radius: 5px">Compose Mail</button>
+        <button
+          mat-button
+          (click)="onComposeMail()"
+          style="
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #00b494;
+            color: white;
+          "
+        >
+          Compose Mail
+        </button>
       </div>
-      <div style="height: 30%;background-color: currentColor;"></div>
-      <div style="height: 30%;background-color: darkgreen;"></div>
-      <div style="height: 30%;background-color: darkred;"></div>
+      <div style="height: 30%; margin-bottom: 10px">
+        <div style="margin-bottom: 10px">FOLDERS</div>
+        <ul style="list-style-type: none; padding-left: 0%; cursor: pointer">
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              inbox
+            </span>
+            <div>Inbox</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              mail_outline
+            </span>
+            <div>Send Mail</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              new_releases
+            </span>
+            <div>Important</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              drafts
+            </span>
+            <div>Drafts</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              delete_outline
+            </span>
+            <div>Trash</div>
+          </li>
+        </ul>
+      </div>
+      <div style="height: 30%; margin-bottom: 10px">
+        <div style="margin-bottom: 10px">CATEGORIES</div>
+        <ul style="list-style-type: none; padding-left: 0%; cursor: pointer">
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              inbox
+            </span>
+            <div>Inbox</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              mail_outline
+            </span>
+            <div>Send Mail</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              new_releases
+            </span>
+            <div>Important</div>
+          </li>
+        </ul>
+      </div>
+      <div style="height: 30%; margin-bottom: 10px">
+        <div style="margin-bottom: 10px">LABELS</div>
+        <ul style="list-style-type: none; padding-left: 0%; cursor: pointer">
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              inbox
+            </span>
+            <div>Inbox</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              mail_outline
+            </span>
+            <div>Send Mail</div>
+          </li>
+          <li class="menu-list">
+            <span class="material-icons" style="padding-right: 10px">
+              new_releases
+            </span>
+            <div>Important</div>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="mails">
-      <div style="height: 10%; background-color: darkmagenta"></div>
-      <div style="height: 10%; background-color: darkviolet"></div>
+      <div
+        style="
+          display: flex;
+          align-content: space-between;
+          text-align: center;
+          align-items: center;
+          padding: 10px;
+        "
+      >
+        <p style="font-size: x-large">Inbox {{ unreadMsgs }}</p>
+        <div style="padding-left: 50%">
+          <input
+            type="text"
+            placeholder="search email"
+            (keyup.enter)="searchEmail($event)"
+          />
+        </div>
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          align-content: space-between;
+          text-align: center;
+          align-items: center;
+          padding: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            text-align: center;
+            align-items: center;
+            padding: 5px;
+          "
+        >
+          <span class="material-icons"> cached </span>
+          <div style="padding-left: 10px">Refresh</div>
+        </div>
+        <div style="padding: 5px">
+          <span class="material-icons"> visibility </span>
+        </div>
+        <div style="padding: 5px">
+          <span class="material-icons"> priority_high </span>
+        </div>
+        <div style="padding: 5px">
+          <span class="material-icons"> delete_outline </span>
+        </div>
+        <div style="padding: 5px; margin-left: 40%;">
+          <span class="material-icons">arrow_back </span>
+        </div>
+        <div style="padding: 5px">
+          <span class="material-icons">arrow_forward </span>
+        </div>
+      </div>
       <ul
         style="
           height: 80%;
-          background-color: darksalmon;
           list-style-type: none;
-          padding: 10px;
+          padding: 0;
+          background-color: #f3f3f4;
         "
       >
         <li
@@ -25,10 +189,12 @@
           style="
             display: flex;
             justify-content: space-around;
-            height: 8%;
+            height: 50px;
             font-size: medium;
             text-align: center;
-            align-items: center; ;
+            align-items: center;
+            background-color: white;
+            margin: 2px 0 2px;
           "
         >
           <div class="checkbox" style="width: 5%">
@@ -53,30 +219,7 @@
       </ul>
     </div>
   </div>
-  <div class="item-sidebar"></div>
+  <div class="item-sidebar">
+    <div style="text-align: center"></div>
+  </div>
 </div>
-
-<!-- <table>
-          <tr>
-            <th id="mail-name">Name</th>
-            <th id="mail-sub">Subject</th>
-            <th id="mail-time">Date</th>
-          </tr>
-          <tr>
-              <td *ngFor="let mail of mails" style="display: flex;justify-content: space-between;">
-                <div class="checkbox">
-                 
-                </div>
-                <div class="name">
-                    {{mail.name}}
-                </div>
-                <div class="sub">
-                    {{mail.sub}}
-                </div>
-                <div class="date">
-                    {{mail.time}}
-                </div>
-              </td>
-          </tr>
-        </table> -->
-<!-- </div> -->

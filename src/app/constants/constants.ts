@@ -57,14 +57,17 @@ export const mails = [
 
 export const accounts = [
   {
+    name: 'a',
     email: 'a@g.com',
     password: '123'
   },
   {
+    name: 'b',
     email: 'b@g.com',
     password: '123'
   },
   {
+    name: 'c',
     email: 'c@g.com',
     password: '123'
   }
