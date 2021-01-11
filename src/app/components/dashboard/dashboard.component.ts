@@ -66,6 +66,8 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((data: any) => {
+      if (!data) return;
+      if (!data.to) return;
       const accounts = JSON.parse(localStorage.getItem('accounts')!);
       const account = accounts.find((acc: any) => {
         return acc.email == this.dataService.userEmail;
