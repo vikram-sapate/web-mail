@@ -12,7 +12,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Sample Email Ids for the login
 
-1) a@g.com or 2) b@g.com  or 3) c@g.com password for all is "123".
+1) a@g.com or 2) b@g.com  or 3) c@g.com & password for all is "123".
 
 ## Code scaffolding
 
