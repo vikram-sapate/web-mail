@@ -2,9 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
+## Install Dependencies
+
+Run `npm i` in project directory.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Sample Email Ids for the login
+
+`a@g.com` or `b@g.com` or `c@g.com` & password for all is `123`.
 
 ## Code scaffolding
 
