@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { ComposeComponent } from '../compose/compose.component';
 import { ReadComponent } from '../read/read.component';
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit {
   allMails: any;
   isMenuExpanded = true;
   unReadMails = 0;
-  constructor(public dialog: MatDialog, private dataService: DataService) {}
+  constructor(private router: Router, public dialog: MatDialog, private dataService: DataService) {}
 
   ngOnInit(): void {
     this.allMails = JSON.parse(localStorage.getItem('mails')!);
@@ -33,9 +34,15 @@ export class DashboardComponent implements OnInit {
       return m.isRead == false;
     }).length;
   }
+
   onMenuToggle() {
     this.isMenuExpanded = this.isMenuExpanded == true ? false : true;
   }
+
+  onLogOut() {
+    this.router.navigate(['login']);
+  }
+
   searchEmail($event: any) {
     $event.target.blur();
   }
